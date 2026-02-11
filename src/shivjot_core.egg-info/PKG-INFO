@@ -1,5 +1,16 @@
-# shivjot-core
-High-performance Python utilities for AI/ML workflows, computer vision, and enhanced Pandas/NumPy data engineering.
+Metadata-Version: 2.4
+Name: shivjot-core
+Version: 1.0.3
+Summary: High-performance Python utilities for AI/ML and Image Processing.
+Author: Shivjot
+License: MIT
+Project-URL: Homepage, https://pypi.org/project/shivjot-core/
+Project-URL: Portfolio, https://shivjotchoudhary.github.io/
+Project-URL: Source Code, https://github.com/ShivjotChoudhary/shivjot-core
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: numpy>=1.24.0
 
 # Shivjot-Core
 
@@ -30,4 +41,3 @@ Created by Shivjot Choudhary.
 Portfolio - https://shivjotchoudhary.github.io/
 
 GitHub - https://github.com/ShivjotChoudhary
-

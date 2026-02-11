@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/shivjot_core/__init__.py
+src/shivjot_core.egg-info/PKG-INFO
+src/shivjot_core.egg-info/SOURCES.txt
+src/shivjot_core.egg-info/dependency_links.txt
+src/shivjot_core.egg-info/requires.txt
+src/shivjot_core.egg-info/top_level.txt
