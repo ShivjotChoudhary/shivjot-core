@@ -1,11 +1,9 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "shivjot-core"
-version = "1.0.3"
-authors = [{ name="Shivjot" }]
+version = "1.0.5"
+authors = [
+  { name="Shivjot Choudhary", email="shivjotchaudhary0@gmail.com" }
+]
 description = "High-performance Python utilities for AI/ML and Image Processing."
 readme = "README.md"
 license = {text = "MIT"}
@@ -19,6 +17,4 @@ dependencies = [
 Homepage = "https://pypi.org/project/shivjot-core/"
 Portfolio = "https://shivjotchoudhary.github.io/"
 "Source Code" = "https://github.com/ShivjotChoudhary/shivjot-core"
-
-[tool.setuptools.packages.find]
-where = ["src"]
+Issues = "https://github.com/ShivjotChoudhary/shivjot-core/issues"

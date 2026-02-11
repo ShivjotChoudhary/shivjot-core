@@ -1,30 +1,195 @@
+
 # Shivjot-Core
 
-High-performance Python utilities for AI/ML workflows, computer vision, and enhanced Pandas/NumPy data engineering.
+# shivjot-core
+
+shivjot-core is a lightweight Python utility library that extends Pandas DataFrames with additional data analysis and preprocessing capabilities, along with a standalone image frequency transformation utility.
+
+
+---
 
 ## Installation
+
+Install from PyPI:
+
 ```bash
 pip install shivjot-core
+```
 
-Markdown
-# Shivjot-Core
+---
 
-High-performance Python utilities for AI/ML workflows, computer vision, and enhanced Pandas/NumPy data engineering.
+## Requirements
 
-## Installation
-```bash
-pip install shivjot-core
-Features
-AI Analysis: Custom Pandas accessor for rapid data insights.
+- Python 3.8+
+- pandas
+- numpy
 
-Image Processing: Tools for frequency domain transformations.
+---
 
-Optimized Performance: Built on top of NumPy and Pandas.
+## Importing the Library
 
-About the Author
-Created by Shivjot Choudhary.
+```python
+import pandas as pd
+import shivjot_core  # Enables the .shivjot accessor
+from shivjot_core import convert_to_frequency
+```
 
-Portfolio - https://shivjotchoudhary.github.io/
+Importing `shivjot_core` automatically registers the `.shivjot` accessor on all Pandas DataFrames.
 
-GitHub - https://github.com/ShivjotChoudhary
+---
 
+# Pandas Accessor API
+
+The library extends `pandas.DataFrame` with a custom accessor:
+
+```
+df.shivjot
+```
+
+---
+
+## 1. analyze()
+
+### Signature
+
+```python
+df.shivjot.analyze()
+```
+
+### Description
+
+Performs descriptive statistical analysis on all numeric columns in the DataFrame.
+
+Automatically:
+- Detects numeric columns
+- Computes summary statistics
+
+### Parameters
+
+None
+
+### Returns
+
+A DataFrame containing descriptive statistics, including:
+
+- count  
+- mean  
+- standard deviation  
+- minimum  
+- maximum  
+
+### Example
+
+```python
+df = pd.read_csv("data.csv")
+
+summary = df.shivjot.analyze()
+print(summary)
+```
+
+---
+
+## 2. normalize()
+
+### Signature
+
+```python
+df.shivjot.normalize()
+```
+
+### Description
+
+Applies Min-Max normalization to all numeric columns in the DataFrame.
+
+The transformation formula used:
+
+```
+(x - min) / (max - min)
+```
+
+Each numeric column is scaled between 0 and 1.
+
+### Parameters
+
+None
+
+### Returns
+
+A new Pandas DataFrame with normalized numeric columns.
+
+### Example
+
+```python
+normalized_df = df.shivjot.normalize()
+```
+
+---
+
+# Standalone Utility Function
+
+---
+
+## convert_to_frequency()
+
+### Signature
+
+```python
+convert_to_frequency(image_matrix)
+```
+
+### Description
+
+Transforms image data from the spatial domain to the frequency domain using Fast Fourier Transform (FFT).
+
+Useful for:
+- Image analysis
+- Noise filtering
+- Frequency-based image processing
+
+### Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| image_matrix | numpy.ndarray | A 2D (grayscale) or 3D (RGB) image array |
+
+### Returns
+
+numpy.ndarray  
+Frequency-domain representation of the image.
+
+### Example
+
+```python
+import numpy as np
+
+# image_array is a NumPy array containing pixel values
+frequency_data = convert_to_frequency(image_array)
+```
+
+---
+
+# Example Workflow
+
+```python
+import pandas as pd
+import shivjot_core
+from shivjot_core import convert_to_frequency
+
+# Load dataset
+df = pd.read_csv("data.csv")
+
+# Analyze dataset
+print(df.shivjot.analyze())
+
+# Normalize dataset
+df_scaled = df.shivjot.normalize()
+
+# Convert image to frequency domain
+freq = convert_to_frequency(image_array)
+```
+
+---
+
+# License
+
+MIT License
