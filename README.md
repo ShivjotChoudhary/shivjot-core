@@ -1,6 +1,4 @@
 
-# Shivjot-Core
-
 # shivjot-core
 
 shivjot-core is a lightweight Python utility library that extends Pandas DataFrames with additional data analysis and preprocessing capabilities, along with a standalone image frequency transformation utility.
